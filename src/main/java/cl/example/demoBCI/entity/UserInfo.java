@@ -1,20 +1,24 @@
 package cl.example.demoBCI.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import java.time.LocalDate;
 import java.util.List;
 
 @Entity
 @Getter
 @Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "user_info")
 public class UserInfo {
 
@@ -42,6 +46,7 @@ public class UserInfo {
 
     private boolean isActive;
 
+    @Column(unique=true)
     private String email;
 
     private String name;
@@ -51,6 +56,7 @@ public class UserInfo {
 
     @OneToMany(mappedBy = "userId",
             cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<UserPhone> phones;
 
 

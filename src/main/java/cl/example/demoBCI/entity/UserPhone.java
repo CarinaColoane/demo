@@ -1,10 +1,12 @@
 package cl.example.demoBCI.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Getter
@@ -21,18 +23,21 @@ public class UserPhone {
             name = "UUID",
             strategy = "org.hibernate.id.UUIDGenerator"
     )
+
     private String id;
+    //@Pattern(regexp = "[0-9]{8}", message = "Enter the 8 phone numbers")
+    private String number;
 
-    private int number;
+    //@Pattern(regexp = "[0-9]{1}", message = "Enter the city code number")
+    private String cityCode;
 
-    private int cityCode;
-
-    private int countryCode;
+    //(regexp = "[0-9]{2}", message = "Enter the 2 country code numbers")
+    private String countryCode;
 
     @ManyToOne
-    @EqualsAndHashCode.Exclude
-    @JoinColumn(name = "fk_user_email", referencedColumnName="id")
+    @JoinColumn(name = "fk_user_id")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @JsonBackReference
     private UserInfo userId;
 
 }
