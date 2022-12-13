@@ -28,15 +28,26 @@ Diagrama de la solución:
 <!-- TODO -->
 ### Instalación
 1. Clonar el repo y situarse en el directorio raiz
-2. Instalar depoendencias
+2. Ejecutar el proyecto
    ```sh
-   gradle build
+   ./gradlew bootRun
    ```
-3. Correr ejecutable
+3. Probar método POST en el endpoint http://localhost:8080/user/create , con body de ejemplo:
    ```sh
-   java -jar build/libs/[jar-file-name].jar
+   {
+    "name": "namePost",
+    "email": "mail1@post.cl",
+    "password": "passPost1",
+    "phones": [
+        {
+            "number": "11121678",
+            "cityCode": "9",
+            "countryCode": "45"
+        }
+    ]
+    }
    ```
-4. Para probar los Test (groovy)
+4. Para probar los Test (groovy) OLD.
    ```sh
    ./gradlew test
    ```
