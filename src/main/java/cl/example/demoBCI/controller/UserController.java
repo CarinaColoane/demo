@@ -12,13 +12,13 @@ import javax.validation.Valid;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/usuario")
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired
     private UserService userservice;
 
-    @PostMapping(path="/crear")
+    @PostMapping(path="/create")
     public ResponseEntity<UserInfo> createUser(@Valid @RequestBody UserInfo userRequest) {
         return ResponseEntity.status(HttpStatus.CREATED).body(userservice.createUser(userRequest));
     }
