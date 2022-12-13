@@ -1,28 +1,48 @@
-# Getting Started
 
-### Reference Documentation
-For further reference, please consider the following sections:
+<!-- ABOUT THE PROJECT -->
+## Acerca del proyecto
 
-* [Official Gradle documentation](https://docs.gradle.org)
-* [Spring Boot Gradle Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.7.6/gradle-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.7.6/gradle-plugin/reference/html/#build-image)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/2.7.6/reference/htmlsingle/#web)
-* [Spring Data JPA](https://docs.spring.io/spring-boot/docs/2.7.6/reference/htmlsingle/#data.sql.jpa-and-spring-data)
-* [Spring Security](https://docs.spring.io/spring-boot/docs/2.7.6/reference/htmlsingle/#web.security)
+La siguiente demo trata de una API RESTful de creación de usuarios en Spring Boot. Se utilizo Gradle para su construcción, H2 para la base de datos en memoria y Hibernate (JPA) para la persistencia de datos.
 
-### Guides
-The following guides illustrate how to use some features concretely:
+Diagrama de la solución:
+![Diagrama Demo](ejercicio.jpg)
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
-* [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
-* [Securing a Web Application](https://spring.io/guides/gs/securing-web/)
-* [Spring Boot and OAuth2](https://spring.io/guides/tutorials/spring-boot-oauth2/)
-* [Authenticating a User with LDAP](https://spring.io/guides/gs/authenticating-ldap/)
 
-### Additional Links
-These additional references should also help you:
+### Construido con
 
-* [Gradle Build Scans – insights for your project's build](https://scans.gradle.com#gradle)
+* Spring boot / Java
+* Gradle
+* H2
 
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+### Prerequisitos
+
+- Considerar las siguientes versiones con las cuales se trabajó:
+    - Java 11
+    - Spring Boot 2.5.14
+    - H2 2.1.212
+
+<!-- TODO -->
+### Instalación
+1. Clonar el repo y situarse en el directorio raiz
+2. Instalar depoendencias
+   ```sh
+   gradle build
+   ```
+3. Correr ejecutable
+   ```sh
+   java -jar build/libs/[jar-file-name].jar
+   ```
+4. Para probar los Test (groovy)
+   ```sh
+   ./gradlew test
+   ```
+
+
+<!-- CONTACT -->
+## Contacto
+
+carina flores coloane
